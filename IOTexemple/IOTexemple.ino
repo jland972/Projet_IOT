@@ -12,7 +12,7 @@
 #define TxNodePin 15
 
 // Setup UART Communication with 
-SoftwareSerial Sigfox =  SoftwareSerial(RxNodePin, TxNodePin);
+SoftwareSerial Sigfox(RxNodePin, TxNodePin);
 
 // 12 bytes message buffer
 uint8_t sigfoxMsg[12];

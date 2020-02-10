@@ -15,18 +15,18 @@
 SoftwareSerial Sigfox(RxNodePin, TxNodePin);
 
 // 12 bytes message buffer
-uint8_t sigfoxMsg;
+uint8_t sigfoxMsg[12];
 
 void setup () {
   Serial.begin(115200);
-  delay(200);
+  delay(2000);
   Serial.println("\n***** START *****");
 
 
   pinMode(RxNodePin, INPUT);
   pinMode(TxNodePin, OUTPUT);
   Sigfox.begin(9600);
-  delay(100);
+  delay(2000);
 
   Serial.print("Device ID: " + getID()); 
   Serial.print("Device PAC Number: " + getPAC());
@@ -35,7 +35,7 @@ void setup () {
 
 void loop () {
 
-  sigfoxMsg=getSensor(DataPin);
+  sigfoxMsg[0]=getSensor(DataPin);
   Serial.println(sendMessage(sigfoxMsg, 5));
 
   // Send every 10 minutes
@@ -110,9 +110,8 @@ String sendMessage(uint8_t sigfoxMsg[], int bufferSize) {
 }
 
 int getSensor(int analogPin){
-  value=analogRead(analogPin);
-  Serial.print(value);
-  // print a tab between values:
-  Serial.print();
+int  value=analogRead(analogPin);
+Serial.println(value);
+ 
   return(value);
 }
