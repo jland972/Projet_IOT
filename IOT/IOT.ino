@@ -7,7 +7,7 @@
 
 #include <SoftwareSerial.h>
 
-
+#define DataPin D3
 #define RxNodePin 13
 #define TxNodePin 15
 
@@ -15,7 +15,7 @@
 SoftwareSerial Sigfox(RxNodePin, TxNodePin);
 
 // 12 bytes message buffer
-uint8_t sigfoxMsg[12];
+uint8_t sigfoxMsg;
 
 void setup () {
   Serial.begin(115200);
@@ -34,12 +34,9 @@ void setup () {
 }
 
 void loop () {
-  sigfoxMsg[0]=0x01;
-  sigfoxMsg[1]=0x23;
-  sigfoxMsg[2]=0x45;
-  sigfoxMsg[3]=0x67;
-  sigfoxMsg[4]=0x89;
-  Serial.println("Send message: " + sendMessage(sigfoxMsg, 5));
+
+  sigfoxMsg=getSensor(DataPin);
+  Serial.println(sendMessage(sigfoxMsg, 5));
 
   // Send every 10 minutes
   delay(60000);
@@ -110,4 +107,12 @@ String sendMessage(uint8_t sigfoxMsg[], int bufferSize) {
   }
 
   return status;
+}
+
+int getSensor(int analogPin){
+  value=analogRead(analogPin);
+  Serial.print(value);
+  // print a tab between values:
+  Serial.print();
+  return(value);
 }
