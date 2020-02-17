@@ -6,10 +6,17 @@
 */
 
 #include <SoftwareSerial.h>
-
-#define DataPin D3
+#include <Adafruit_Sensor.h>
+#include <DHT.h>
+#include <DHT_U.h>
+#define DHTPIN 0
+#define DHTTYPE    DHT11     // DHT 11
 #define RxNodePin 13
 #define TxNodePin 15
+
+uint32_t delayMS;
+
+DHT_Unified dht(DHTPIN, DHTTYPE);
 
 // Setup UART Communication with 
 SoftwareSerial Sigfox(RxNodePin, TxNodePin);
@@ -31,11 +38,13 @@ void setup () {
   Serial.print("Device ID: " + getID()); 
   Serial.print("Device PAC Number: " + getPAC());
   delay(100);
+  sensor_t sensor;
+  delayMS = sensor.min_delay / 1000;
 }
 
 void loop () {
 
-  sigfoxMsg[0]=getSensor(DataPin);
+  sigfoxMsg[0]=getSensor();
   Serial.println(sendMessage(sigfoxMsg, 5));
 
   // Send every 10 minutes
@@ -109,9 +118,18 @@ String sendMessage(uint8_t sigfoxMsg[], int bufferSize) {
   return status;
 }
 
-int getSensor(int analogPin){
-int  value=analogRead(analogPin);
-Serial.println(value);
+int getSensor(){
+  sensors_event_t event;
+  dht.temperature().getEvent(&event);
+  if (isnan(event.temperature)) {
+    Serial.println(F("Error reading temperature!"));
+  }
+  else {
+    Serial.print(F("Temperature: "));
+    Serial.print(event.temperature);
+    Serial.println(F("°C"));
+  }
+
  
-  return(value);
+  return(event.temperature);
 }
