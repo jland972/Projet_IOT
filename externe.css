@@ -1,0 +1,35 @@
+span.titre {
+    color: #f00;
+   margin: auto;
+   width: 66%;
+}
+body {
+color:black;
+ background-image:  url("https://mdn.mozillademos.org/files/11991/startransparent.gif");
+}
+
+header
+{
+    text-align: center;
+    width:100%;
+    margin-top: -5px;
+    margin-left: 0px;
+    padding-bottom: 5px;
+    height: 16px;
+    background-color: cornflowerblue;
+}
+
+#weather{
+  text-align: center;
+  border: 10px ridge #f00;
+    background-color: #ff0;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+  
+}
+
+h2{
+  
+  text-align: center;
+}

@@ -1,0 +1,172 @@
+
+  
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="/js/lib/dummy.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      span.titre {
+    color: #f00;
+   margin: auto;
+   width: 66%;
+}
+body {
+color:black;
+ background-image:  url("https://mdn.mozillademos.org/files/11991/startransparent.gif");
+}
+
+header
+{
+    text-align: center;
+    width:100%;
+    margin-top: -5px;
+    margin-left: 0px;
+    padding-bottom: 5px;
+    height: 16px;
+    background-color: cornflowerblue;
+}
+
+#weather{
+  text-align: center;
+  border: 10px ridge #f00;
+    background-color: #ff0;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+  
+}
+
+h2{
+  
+  text-align: center;
+}
+
+  </style>
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">//<![CDATA[
+
+    window.onload=function(){
+      
+var weather = new Vue({
+        el: '#weather',
+
+        data: {
+            dataExterne: []
+           
+        },
+
+        mounted: function () {
+            this.getDataExterne();
+            
+        },        
+
+        methods: {
+            getDataExterne: function () {
+                this.$http.get('https://api.openweathermap.org/data/2.5/weather?lon=3.066667&lat=50.633333&APPID=52faa11a930c72cf181a31f9aabf8c00&units=metric&lang=fr')
+                          .then(response => {
+                             this.dataExterne = response.data
+                          })
+            }
+
+            
+        }
+
+    })
+    ;
+
+    }
+
+  //]]></script>
+
+</head>
+<body>
+    
+<html>
+<head>
+    <title>Weather App</title>
+
+     <link rel="stylesheet" href="externe.css" />
+    
+</head>
+
+
+<body>
+
+<header><span class="titre"> <h3>
+Weather App
+</h3></span> </header>
+
+<p>
+<h2>
+affichage:
+</h2>
+</p>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
+</script>
+ 
+ <div id="weather">
+   
+    
+    
+        <li>Ville : {{ dataExterne.name }}</li>
+        <li>Temperature : {{ dataExterne.main.temp }} °C</li>
+        <li>Humidity : {{ dataExterne.main.humidity }} % </li>
+        <li>Temps : {{ dataExterne.weather[0].description }}</li>     
+    
+</div> 
+
+<div id="interne">
+   
+    
+    
+        <li>Ville : {{ dataInterne.name }}</li>
+        <li>Temperature : {{ dataInterne.main.temp }} °C</li>
+        <li>Humidity : {{ dataInterne.main.humidity }} % </li>
+        <li>Temps : {{ dataInterne.weather[0].description }}</li>     
+    
+</div> 
+
+
+ 
+<footer>
+  Grégoire de Mentque   Simon Frémont    Jérémy Cledelin
+</footer>
+</body>
+
+
+  
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "sonyjp9m"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+</body>
+</html>
