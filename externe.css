@@ -19,7 +19,19 @@ header
     background-color: cornflowerblue;
 }
 
+
+
 #weather{
+  text-align: center;
+  border: 10px ridge #f00;
+    background-color: #ff0;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+  
+}
+
+#interne{
   text-align: center;
   border: 10px ridge #f00;
     background-color: #ff0;
