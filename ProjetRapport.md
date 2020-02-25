@@ -17,10 +17,10 @@
 
 ## Hardware pinout
 * ### NodeMCU
-![NodeMCU](doc/nodemcu_pins.png)
+![NodeMCU](https://github.com/romaintribout/Sigfox-NODEMCU-BRKWS01-Wisol-SFM10R1/blob/master/doc/nodemcu_pins.png?raw=true)
 
 * ### SNOC Breakout Board - Sigfox BRKWS01
-![SNOC](doc/BRKWS01_PCB_pinout.png)
+![SNOC](https://github.com/romaintribout/Sigfox-NODEMCU-BRKWS01-Wisol-SFM10R1/blob/master/doc/BRKWS01_PCB_pinout.png?raw=true)
 
 ## Wiring NodeMCU with BRKWS01
 BRKWS01 use UART, so we will use Software Serial with the NodeMCU. With pin D7 (GPIO 13) and pin D8 (GPIO15).
