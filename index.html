@@ -13,17 +13,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <script
-    type="text/javascript"
-    src="/js/lib/dummy.js"
-    
-  ></script>
+<script  src="https://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
+  
 
     <link rel="stylesheet"  href="externe.css">
 
 
   
-
+<meta http-equiv="Refresh" content="30; url=index.html">
+<meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
  
 </head>
 <body>
@@ -35,7 +33,7 @@
 
     window.onload=function(){
       
-var weather = new Vue({
+   var weather = new Vue({
         el: '#weather',
 
         data: {
@@ -65,19 +63,45 @@ var weather = new Vue({
     var interne = new Vue({
         el: '#interne',
         data: {
-            dataWeather: []
+            dataint: []
         },
         mounted: function () {
-            this.getDataWeather();
+            this.getDataWeather()
         },        
         methods: {
             getDataWeather: function () {
-              /*
-              importation json
-              
 
-                      */    
-               this.dataWeather = datajson;
+              this.$http.get('data.json')
+                          .then(response => {
+                            console.log(response.data.device);
+                     console.log(response.data.duplicate);
+                     console.log(response.data.seqNumber);
+                     console.log(response.data.snr);
+                     console.log(response.data.data);
+                     console.log(response.data.time);
+                     console.log(response.data.station);
+                    
+                             this.dataint = response.data
+                          })
+              
+               /* $.ajax({
+                  type: 'GET',
+                  url: 'data.json',
+                  dataType: 'json',
+                  success: function(data) {
+                    console.log('success',data);
+                     console.log(data.device);
+                     console.log(data.duplicate);
+                     console.log(data.seqNumber);
+                     console.log(data.snr);
+                     console.log(data.data);
+                     console.log(data.time);
+                     console.log(data.station);
+                     this.dataint = "50"
+
+                  }
+                });*/
+             
                          
             }
         }
@@ -117,7 +141,7 @@ affichage:
 
     
         <li>Ville : Là tu es </li>
-        <li>Temperature : {{ dataWeather}} °C</li>
+        <li>Temperature : {{ dataint.data[0]+dataint.data[1]}} °C</li>
         <li>Humidity : {{  }} % </li>   
     
 </div> 

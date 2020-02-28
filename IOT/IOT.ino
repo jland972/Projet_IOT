@@ -100,7 +100,7 @@ String sendMessage(uint8_t sigfoxMsg[], int bufferSize) {
     if (sigfoxMsg[i]<0x10) {
       Sigfox.print("0");
     }
-    Sigfox.print(String(sigfoxMsg[i], HEX));
+    Sigfox.print(String(sigfoxMsg[i], DEC));
   }
 
   Sigfox.print("\r");

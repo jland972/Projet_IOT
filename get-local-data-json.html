@@ -1,0 +1,28 @@
+get local data json
+
+
+
+
+<script  src="https://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
+
+
+
+<script type="text/JavaScript">
+$(function() {
+  $.ajax({
+    type: 'GET',
+    url: 'data.json',
+    dataType: 'json',
+    success: function(data) {
+      console.log('success',data);
+       console.log(data.device);
+       console.log(data.duplicate);
+       console.log(data.seqNumber);
+       console.log(data.snr);
+       console.log(data.data);
+       console.log(data.time);
+       console.log(data.station);
+    }
+  });
+});
+         </script>
