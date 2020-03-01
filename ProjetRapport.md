@@ -65,143 +65,36 @@ Schéma du fonctionnement.
 ![alternative](Fonctionnement.png)
 
 
+## How to Use
 
-Partie Code :
------------
+* Lancer ngrok avec la commande suivante:
+```bash
+   ./ngrok http 5000 -region eu
+```
 
-````HTML
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Weather App</title>
+![alternative](doc/ngrok.png)
 
-  <link rel="stylesheet" href="externe.css" />
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="googlebot" content="noindex, nofollow">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+* Récupérer le lien ngrok et le mettre dans la fonction de callback dans les paramètres Sigfox:
 
+1. Dans la liste des appareils, trouver le votre en utilisant votre ID, cliquer sur le nom de votre appareil.
 
-  <script
-    type="text/javascript"
-    src="/js/lib/dummy.js"
-    
-  ></script>
+2. Clique sur le menu CALLBACKS , puis sur new
+![ngrok](doc/backend-step1.png)
 
-    <link rel="stylesheet"  href="externe.css">
-</head>
-<body>
-	<script src="https://unpkg.com/vue/dist/vue.js"></script>
-	<script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
-	</script>
-	<script type="text/javascript">//<![CDATA[
+3. Crée un "Custom callback"
+![ngrok](doc/backend-step2.png)
 
-    window.onload=function(){
-      
-var weather = new Vue({
-        el: '#weather',
+4. Configure avec ton URL ngrok
+![ngrok](doc/backend-step3.png)
 
-        data: {
-            dataExterne: []
-        },
+* Allume iot.py avec la commande
+```bash
+   python3 iot.py
+```
 
-        mounted: function () {
-            this.getDataExterne();  
-        },        
+* Brancher ensuite votre station météo au réseau électrique.
 
-        methods: {
-            getDataExterne: function () {
-                this.$http.get('https://api.openweathermap.org/data/2.5/weather?lon=3.066667&lat=50.633333&APPID=52faa11a930c72cf181a31f9aabf8c00&units=metric&lang=fr')
-                          .then(response => {
-                             this.dataExterne = response.data
-                          })
-            }
-        }
-    })
-    ;
-    var weather = new Vue({
-        el: '#interne',
+* Enfin rendez-vous sur la page http://localhost/
 
-        data: {
-            dataInterne: []
-        },
-
-        mounted: function () {
-            this.getDataInterne();
-        },        
-
-        methods: {
-
-            getDataInterne: function () {
-                this.$http.get('http://35341161.eu.ngrok.io/')
-                          .then(response => {
-                             this.dataInterne = response.data
-                          })
-            }
-        }
-
-    })
-    ;
-    }
-
-  </script>
-
-<header><span class="titre"> <h3>
-Weather App
-</h3></span> </header>
-
-<p>
-<h2>
-affichage:
-</h2>
-</p>
-
-
- 
- <div id="weather">
-   
-    
-    
-        <li>Ville : {{ dataExterne.name }}</li>
-        <li>Temperature : {{ dataExterne.main.temp }} °C</li>
-        <li>Humidity : {{ dataExterne.main.humidity }} % </li>
-        <li>Temps : {{ dataExterne.weather[0].description }}</li>     
-    
-</div> 
-
-<div id="interne">
-    
-        <li>Ville : {{ dataInterne.name }}</li>
-        <li>Temperature : {{ dataInterne.data }} °C</li>
-        <li>Humidity : {{ dataInterne.main.humidity }} % </li>
-        <li>Temps : {{ dataInterne.weather[0].description }}</li>     
-    
-</div> 
-  
-  <script>
-    // tell the embed parent frame the height of the content
-    if (window.parent && window.parent.parent){
-      window.parent.parent.postMessage(["resultsFrame", {
-        height: document.body.getBoundingClientRect().height,
-        slug: "sonyjp9m"
-      }], "*")
-    }
-
-    // always overwrite window.name, in case users try to set it manually
-    window.name = "result"
-  </script>
-</body>
-<footer>
-  Grégoire de Mentque  / Simon Frémont  /  Jérémy Cledelin
-</footer>
-</body>
-
-</html>
-
-
-````
-
-
-
+* Et voila! ;)
 
