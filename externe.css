@@ -1,57 +1,117 @@
-span.titre {
-    color: #f00;
-   margin: auto;
-   width: 66%;
-}
-body {
-color:black;
- background-image:  url("https://mdn.mozillademos.org/files/11991/startransparent.gif");
-}
-
-header
-{
+header{
+  
+  color: black;
+  font-family: Verdana, sans-serif;
+  bottom: 0px;
+    left: 0px;
     text-align: center;
+    padding-top:2px;
     width:100%;
-    margin-top: -5px;
     margin-left: 0px;
-    padding-bottom: 5px;
-    height: 16px;
-    background-color: cornflowerblue;
+    vertical-align: bottom;
+    background-color:rgb(180,100,100);
+    height: 40px;
+     width: 100%;
+    height: 100%;
+    display: inline-block;
+    line-height: 60%;
 }
 
+body{
+  background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #6AFBFA), color-stop(0.5, #0088F0), color-stop(0.5, #0078FF), color-stop(1, #03009C));
+     -webkit-border-radius: 5px;
+     -webkit-box-shadow: inset 0px 0px 0px 1px rgba(0, 34, 84, 0.4), 1px 1px 3px #333;
+ 
+     background: -moz-linear-gradient(0% 100% 90deg, #03009C 0%, #0078FF 50%, #0088F0 50%, #6AFBFA 100%);
+     -moz-border-radius: 5px;
+     -moz-box-shadow: inset 0px 0px 0px 1px rgba(0, 34, 84, 0.4), 1px 1px 3px #333;
+}
 
+#meteo
+  {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+ 
+    border-radius: 5px;
+ 
+    font-family: "lucida grande", sans-serif;
+    line-height: 1;
+  }
+ 
 
-#weather{
-  text-align: center;
-  border: 10px ridge #f00;
-    background-color: #ff0;
-    padding: .5rem;
-    display: flex;
-    flex-direction: column;
+.blue_bg
+  {
+     color: white;
+      margin-top: 10%;
+      margin-bottom:10%;
+      margin-left: 37%;
+      margin-right: 37%;
+      border: 1px solid #03009C;
+ 
+     border: 1px solid #333736;
+ 
+    background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #BABDBD), color-stop(0.5, #808484), color-stop(0.5, #777979), color-stop(1, #333736));
+    -webkit-border-radius: 5px;
+    -webkit-box-shadow: inset 0px 0px 0px 1px rgba(100, 100, 100, 0.4), 1px 1px 3px #333;
+ 
+    background: -moz-linear-gradient(0% 100% 90deg, #333736 0%, #777979 50%, #808484 50%, #BABDBD 100%);
+    -moz-border-radius: 5px;
+    -moz-box-shadow: inset 0px 0px 0px 1px rgba(100, 100, 100, 0.4), 1px 1px 3px #333;
+  }
+ 
+ 
+
+.top
+  {
+    width: 280px;
+    height: 30px;
+    padding: 5px 15px 5px 5px;
+ 
+    text-align: right;
+  }
+
+  .top .date { font-size: 10px; }
+
+#weather
+  {
+    width: 290px;
+    height: 70px;
+    padding: 5px 5px 5px 5px;
+  }
+  footer
+{
   
+    color: black;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    text-align: center;
+    padding-top:2px;
+    width:100%;
+    margin-left: 0px;
+    vertical-align: bottom;
+    background-color:rgb(180,100,100);
+    height: 40px;
+    color:white;
+
 }
 
-#interne{
-  text-align: center;
-  border: 10px ridge #f00;
-    background-color: #ff0;
-    padding: .5rem;
-    display: flex;
-    flex-direction: column;
+
+footer a
+{
+    color: white;
+    text-decoration:none;
+    vertical-align: center;
+}
+
+footer div
+{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    line-height: 60%;
+}
+
+
   
-}
-
-h2{
-  
-  text-align: center;
-}
-
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: red;
-  color: white;
-  text-align: center;
-}
