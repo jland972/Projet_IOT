@@ -43,8 +43,8 @@ void setup () {
 }
 
 void loop () {
-
-  sigfoxMsg[0]=getSensor();
+  getSensor();
+  
   Serial.println(sendMessage(sigfoxMsg, 5));
 
   // Send every 10 minutes
@@ -118,7 +118,8 @@ String sendMessage(uint8_t sigfoxMsg[], int bufferSize) {
   return status;
 }
 
-int getSensor(){
+void getSensor(){
+  
   sensors_event_t event;
   dht.temperature().getEvent(&event);
   if (isnan(event.temperature)) {
@@ -129,7 +130,20 @@ int getSensor(){
     Serial.print(event.temperature);
     Serial.println(F("°C"));
   }
+  
+  sigfoxMsg[0]=event.temperature;
+dht.humidity().getEvent(&event);
+  if (isnan(event.relative_humidity)) {
+    Serial.println(F("Error reading humidity!"));
+  }
+  else {
+    Serial.print(F("Humidity: "));
+    Serial.print(event.relative_humidity);
+    Serial.println(F("%"));
+  }
 
- 
-  return(event.temperature);
+  sigfoxMsg[2]=event.relative_humidity;
+  
+  
+  
 }

@@ -17,6 +17,7 @@ Software.
 --------
 * Arduino IDE
 * ESP8266 board et lib pour Arduino IDE
+* Apache2
 
 Hardware pinout.
 ---------------
@@ -42,16 +43,22 @@ Pour communiquer avec le SigFox modem, on utilise UART. Cela permet la communica
 Device ID est un id unique pour le module.
 
 
-## Grégoire de Mentque : 
-* Partie OpeWeatherMap;
+Partie Open Weather.
+--------------------
+
 * Choix d'OpenWeatherMap : Nous avons utiliser cet API pour nous donner les données météo car il a été vu en cours et que savons comment cela fonctionne
 * Nous avons affiché les résultats grâce a VueJs, qui a été vu en cours.
 
 Grâce à la clé fournit par le site, nous pouvons avoir la météo du lieu où nous sommes. Nous affichons le tout sur une page HTML. 
 
-## Simon Frémon et Jérémy Clédelin :
+Partie Donnée locale.
+---------------------
 
-Partie sigfox;
+* On récuère les données du capteurs à savoir tempérarture et humidité.
+* On transmet les données sur le réseau sigfox en tant que message.
+* On met en place une fonction de callback qui écrit les données reçu dans un json.
+* On lit la donnée du json et on affiche sur la page html.
+
 
 Partie Code :
 -----------
