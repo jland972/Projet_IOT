@@ -24,6 +24,7 @@
 <meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
  
 </head>
+
 <body>
 
 	<script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -111,45 +112,39 @@
 
   </script>
 
-
-<header>
- <h3>
+<header><span class="titre"> <h1>
 Weather App
-</h3></span> </header>
+</h1></span> </header>
 
-<div id="meteo" class="blue_bg">
-        <div class="top">
-            <div class="date"> <h3>
-            
-            <h3>Lundi 21 Fevrier 2020 </h3> </div>
-            
-        </div>
- 
- 
- 
- <div class="extérieur">
+
+
+<p><h2> En extérieur</h2></p>
  
  <div id="weather">
-  
-  <div class="detail">
-  <div class="title">
+   
+    
     
         <li>Ville : {{ dataExterne.name }}</li>
-        <li>Température extérieure: {{ dataExterne.main.temp }} °C</li>
-        <li>Humidité extérieure : {{ dataExterne.main.humidity }} % </li>
-        <li>Temps à l'extérieur : {{ dataExterne.weather[0].description }}</li>   
-        <li>Température intérieure : <!--{{ dataint.data[0]+dataint.data[1]}} -->°C</li>
-        <li>Humidité intérieur : {{  }} % </li>   
-        
-        </div>
-        </div>
+        <li>Temperature : {{ dataExterne.main.temp }} °C</li>
+        <li>Humidity : {{ dataExterne.main.humidity }} % </li>
+        <li>Temps : {{ dataExterne.weather[0].description }}</li>     
+    
 </div> 
 
-</div>
+<p><h2> En interne</h2></p>
 
-</div>
+<div id="interne">
+   
+
+    
+        <li>Ville : Là tu es </li>
+        <li>Temperature : {{ dataint.data[0]+dataint.data[1]}} °C</li>
+        <li>Humidity : {{dataint.data[4]+dataint.data[5]  }} % </li>   
+    
+</div> 
 
 
+ 
 
 
   

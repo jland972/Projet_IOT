@@ -21,7 +21,7 @@ Software.
 
 Schéma Hardware.
 ---------------
-![alternative](Chêmma_Ardewairent.png)
+![alternative](doc/Chêmma_Ardewairent.png)
 
 Conection NodeMCU et BRKWS01.
 ---------------------------
@@ -62,9 +62,8 @@ Partie Donnée locale.
 
 Schéma du fonctionnement.
 -------------------------
-![alternative](Fonctionnement.png)
+![alternative](doc/Fonctionnement.png)
 
-<<<<<<< HEAD
 
 ## How to Use
 
@@ -99,5 +98,4 @@ Schéma du fonctionnement.
 
 * Et voila! ;)
 
-=======
->>>>>>> master
+=============================================================================================

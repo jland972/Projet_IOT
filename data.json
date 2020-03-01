@@ -1,11 +1,1 @@
-{
-
-"device": "21442D", 
-"duplicate": "false", 
-"seqNumber": "617",
-"snr": "22.08", 
-"data": "1400000000", 
-"time": "1582630221", 
-"station": "DBC2"
-
-}
+{"seqNumber": "810", "station": "6951", "device": "21442D", "snr": "7.65", "time": "1582891344", "data": "1700370000", "duplicate": "false"}
