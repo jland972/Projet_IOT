@@ -11,7 +11,7 @@ Hardware.
 -------- 
 * NodeMCU 1.0
 * SNOC Breakout Board - Sigfox BRKWS01
-
+* AOSONG DHT11 - Temperature and Humidity Sensor
 
 Software.
 --------
@@ -39,18 +39,25 @@ ________________________________________________________________________________
 SigFox modem module ID et PAC number.
 -------------------------------------
 
-Pour communiquer avec le SigFox modem, on utilise UART. Cela permet la communication entre lesigfox modem et le MCU.
+Pour communiquer avec le SigFox modem, on utilise UART. Cela permet la communication entre le modem sigfox et le MCU.
 Device ID est un id unique pour le module.
 
 
+<<<<<<< HEAD
 Partie Open Weather.
 --------------------
 
 * Choix d'OpenWeatherMap : Nous avons utiliser cet API pour nous donner les données météo car il a été vu en cours et que savons comment cela fonctionne
+=======
+## Grégoire de Mentque : 
+* Partie OpeWeatherMap;
+* Choix d'OpenWeatherMap : Nous avons utilisé cet API pour nous donner les données météo car il a été vu en cours et que nous savions comment cela fonctionne
+>>>>>>> master
 * Nous avons affiché les résultats grâce a VueJs, qui a été vu en cours.
 
-Grâce à la clé fournit par le site, nous pouvons avoir la météo du lieu où nous sommes. Nous affichons le tout sur une page HTML. 
+Grâce à la clé fournie par le site, nous pouvons avoir la météo du lieu où nous sommes. Nous affichons le tout sur une page HTML. 
 
+<<<<<<< HEAD
 Partie Donnée locale.
 ---------------------
 
@@ -59,6 +66,12 @@ Partie Donnée locale.
 * On met en place une fonction de callback qui écrit les données reçu dans un json.
 * On lit la donnée du json et on affiche sur la page html.
 
+=======
+## Simon Frémont et Jérémy Clédelin :
+
+Partie sigfox :
+* Nous avons décidé d'utiliser Sigfox pour que l'ensemble de nos données locales soient accessibles partout (comme les données de l'API) et donc de pouvoir créer une application qui fonctionne partout.
+>>>>>>> master
 
 Partie Code :
 -----------
@@ -195,3 +208,11 @@ affichage:
 
 
 ````
+
+
+## Schéma du fonctionnement
+![alternative](Fonctionnement.png)
+
+## Schéma hardware
+![alternative](Chêmma_Ardewairent.png)
+
