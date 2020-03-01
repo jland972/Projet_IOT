@@ -19,15 +19,11 @@ Software.
 * ESP8266 board et lib pour Arduino IDE
 * Apache2
 
-Hardware pinout.
+Schéma Hardware.
 ---------------
-* ### NodeMCU
-![NodeMCU](https://github.com/romaintribout/Sigfox-NODEMCU-BRKWS01-Wisol-SFM10R1/blob/master/doc/nodemcu_pins.png?raw=true)
+![alternative](Chêmma_Ardewairent.png)
 
-* ### SNOC Breakout Board - Sigfox BRKWS01
-![SNOC](https://github.com/romaintribout/Sigfox-NODEMCU-BRKWS01-Wisol-SFM10R1/blob/master/doc/BRKWS01_PCB_pinout.png?raw=true)
-
-Wiring NodeMCU with BRKWS01.
+Conection NodeMCU et BRKWS01.
 ---------------------------
 BRKWS01 utilise UART, donc on a utilisé Software Serial avec le NodeMCU. On utilisé les pins D7 (GPIO 13) et pins D8 (GPIO15).
 
@@ -63,6 +59,10 @@ Partie Donnée locale.
 * On lit la donnée du json et on affiche sur la page html.
 
 
+
+Schéma du fonctionnement.
+-------------------------
+![alternative](Fonctionnement.png)
 
 
 
@@ -203,9 +203,5 @@ affichage:
 ````
 
 
-## Schéma du fonctionnement
-![alternative](Fonctionnement.png)
 
-## Schéma hardware
-![alternative](Chêmma_Ardewairent.png)
 
