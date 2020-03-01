@@ -111,43 +111,45 @@
 
   </script>
 
-<header><span class="titre"> <h3>
+
+<header>
+ <h3>
 Weather App
 </h3></span> </header>
 
-<p>
-<h2>
-affichage:
-</h2>
-</p>
-
-<p> En extérieur</p>
+<div id="meteo" class="blue_bg">
+        <div class="top">
+            <div class="date"> <h3>
+            
+            <h3>Lundi 21 Fevrier 2020 </h3> </div>
+            
+        </div>
+ 
+ 
+ 
+ <div class="extérieur">
  
  <div id="weather">
-   
-    
+  
+  <div class="detail">
+  <div class="title">
     
         <li>Ville : {{ dataExterne.name }}</li>
-        <li>Temperature : {{ dataExterne.main.temp }} °C</li>
-        <li>Humidity : {{ dataExterne.main.humidity }} % </li>
-        <li>Temps : {{ dataExterne.weather[0].description }}</li>     
-    
+        <li>Température extérieure: {{ dataExterne.main.temp }} °C</li>
+        <li>Humidité extérieure : {{ dataExterne.main.humidity }} % </li>
+        <li>Temps à l'extérieur : {{ dataExterne.weather[0].description }}</li>   
+        <li>Température intérieure : <!--{{ dataint.data[0]+dataint.data[1]}} -->°C</li>
+        <li>Humidité intérieur : {{  }} % </li>   
+        
+        </div>
+        </div>
 </div> 
 
-<p> En interne </p>
+</div>
 
-<div id="interne">
-   
-
-    
-        <li>Ville : Là tu es </li>
-        <li>Temperature : {{ dataint.data[0]+dataint.data[1]}} °C</li>
-        <li>Humidity : {{  }} % </li>   
-    
-</div> 
+</div>
 
 
- 
 
 
   

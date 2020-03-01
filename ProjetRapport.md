@@ -64,6 +64,7 @@ Schéma du fonctionnement.
 -------------------------
 ![alternative](Fonctionnement.png)
 
+<<<<<<< HEAD
 
 ## How to Use
 
@@ -98,3 +99,5 @@ Schéma du fonctionnement.
 
 * Et voila! ;)
 
+=======
+>>>>>>> master
