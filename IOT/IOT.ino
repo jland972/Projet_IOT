@@ -48,7 +48,7 @@ void loop () {
   Serial.println(sendMessage(sigfoxMsg, 5));
 
   // Send every 10 minutes
-  delay(60000);
+  delay(600000);
 }
 
 // Get device ID
